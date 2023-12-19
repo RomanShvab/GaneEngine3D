@@ -1,0 +1,3 @@
+﻿  Main.cpp
+C:\Users\shvab\Desktop\OpenGl\Main.cpp(142,20): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  OpenGl.vcxproj -> C:\Users\shvab\Desktop\OpenGl\x64\Debug\OpenGl.exe
