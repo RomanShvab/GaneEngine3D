@@ -1,1 +1,2 @@
 C:\Users\shvab\Desktop\OpenGl\x64\Debug\OpenGl.exe
+C:\Users\shvab\Desktop\GameEngine3D\x64\Debug\OpenGl.exe
