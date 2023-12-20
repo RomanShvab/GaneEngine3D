@@ -53,24 +53,35 @@ int main() {
 
     // Klasa dla piramidy
     Pyramid pyramid;
+    pyramid.setPosition(-1, -1, -1);
+    pyramid.setColor(1.0f, 0.0f, 0.0f, 1.0f);
 
     // Klasa dla kostki
     Cube cube;
-    cube.SetPosition(glm::vec3(1,1,1));
+    cube.setColor(0.0f, 1.0f, 0.0f, 1.0f);
 
-    // Główna pętla renderowania
+    double lastFrameTime = glfwGetTime();
     while (!glfwWindowShouldClose(window)) {
+
+        double currentTime = glfwGetTime();
+        float deltaTime = static_cast<float>(currentTime - lastFrameTime);
+        lastFrameTime = currentTime;
         // Obsługa wejść
         processInput(window);
+        float time = glfwGetTime();
 
         // Rysowanie
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
         // Rysowanie piramidy
+        pyramid.move(1, 0, 0, deltaTime);
+        pyramid.rotate(0.0f, 1.0f, 0.0f);
         pyramid.draw(view, projection);
 
         // Rysowanie kostki
+        cube.setPosition(1, 1, 1);
+        cube.rotate(1.0f, 0.0f, 0.0f);
         cube.draw(view, projection);
 
         // Zamiana buforów i obsługa zdarzeń
