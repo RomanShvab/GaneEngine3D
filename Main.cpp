@@ -7,6 +7,8 @@
 
 #include "Pyramid.h"
 #include "Cube.h"
+#include "Camera.h"
+
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
     glViewport(0, 0, width, height);
@@ -48,8 +50,8 @@ int main() {
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
     // Ustawienia kamery
+    Camera camera(glm::vec3(0.0f, 0.0f, 5.0f));
     glm::mat4 projection = glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);
-    glm::mat4 view = glm::lookAt(glm::vec3(0.0f, 3.0f, 5.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 
     // Klasa dla piramidy
     Pyramid pyramid;
@@ -61,6 +63,10 @@ int main() {
     cube.setColor(0.0f, 1.0f, 0.0f, 1.0f);
 
     double lastFrameTime = glfwGetTime();
+    double lastMouseX, lastMouseY;
+    bool firstMouse = true;
+
+    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     while (!glfwWindowShouldClose(window)) {
 
         double currentTime = glfwGetTime();
@@ -70,9 +76,30 @@ int main() {
         processInput(window);
         float time = glfwGetTime();
 
+        // Ruch myszy
+        double mouseX, mouseY;
+        glfwGetCursorPos(window, &mouseX, &mouseY);
+
+        if (firstMouse) {
+            lastMouseX = mouseX;
+            lastMouseY = mouseY;
+            firstMouse = false;
+        }
+
+        double xOffset = mouseX - lastMouseX;
+        double yOffset = lastMouseY - mouseY;
+
+        lastMouseX = mouseX;
+        lastMouseY = mouseY;
+
+        camera.processMouseMovement(static_cast<float>(xOffset), static_cast<float>(yOffset));
+
         // Rysowanie
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
+
+        glm::mat4 view = camera.getViewMatrix();
+        camera.processKeyboard(window, deltaTime);
 
         // Rysowanie piramidy
         pyramid.move(1, 0, 0, deltaTime);
