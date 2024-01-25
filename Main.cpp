@@ -9,11 +9,20 @@
 #include "Cube.h"
 #include "Camera.h"
 
-
+/**
+ * @brief Funkcja obsługująca zmiany rozmiaru okna OpenGL.
+ * @param window Wskaźnik do obiektu GLFWwindow.
+ * @param width Nowa szerokość okna.
+ * @param height Nowa wysokość okna.
+ */
 void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
     glViewport(0, 0, width, height);
 }
 
+/**
+ * @brief Funkcja obsługująca wejścia od użytkownika.
+ * @param window Wskaźnik do obiektu GLFWwindow.
+ */
 void processInput(GLFWwindow* window) {
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
@@ -25,6 +34,7 @@ int main() {
         std::cerr << "Failed to initialize GLFW" << std::endl;
         return -1;
     }
+
     // Konfiguracja GLFW
     glfwInitHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwInitHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -67,14 +77,19 @@ int main() {
     bool firstMouse = true;
 
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-    while (!glfwWindowShouldClose(window)) {
 
+    glEnable(GL_DEPTH_TEST);
+    glEnable(GL_LIGHTING);
+    glEnable(GL_LIGHT0);
+    glEnable(GL_NORMALIZE);
+
+    while (!glfwWindowShouldClose(window)) {
         double currentTime = glfwGetTime();
         float deltaTime = static_cast<float>(currentTime - lastFrameTime);
         lastFrameTime = currentTime;
+
         // Obsługa wejść
         processInput(window);
-        float time = glfwGetTime();
 
         // Ruch myszy
         double mouseX, mouseY;
@@ -96,14 +111,17 @@ int main() {
 
         // Rysowanie
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         glm::mat4 view = camera.getViewMatrix();
         camera.processKeyboard(window, deltaTime);
 
+        float pos[] = { 0,0,1,0 };
+        glLightfv(GL_LIGHT0, GL_POSITION, pos);
+
         // Rysowanie piramidy
         pyramid.move(1, 0, 0, deltaTime);
-        pyramid.rotate(0.0f, 1.0f, 0.0f);
+        pyramid.rotate(0, 0, 1);
         pyramid.draw(view, projection);
 
         // Rysowanie kostki

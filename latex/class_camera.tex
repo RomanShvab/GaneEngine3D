@@ -1,0 +1,126 @@
+\doxysection{Camera Class Reference}
+\hypertarget{class_camera}{}\label{class_camera}\index{Camera@{Camera}}
+
+
+Klasa reprezentująca kamerę w przestrzeni trójwymiarowej.  
+
+
+
+
+{\ttfamily \#include $<$Camera.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_camera_a78ef93909a0e071abb5d774a5361a97e}{Camera}} (glm\+::vec3 position=glm\+::vec3(0.\+0f, 0.\+0f, 3.\+0f), glm\+::vec3 up=glm\+::vec3(0.\+0f, 1.\+0f, 0.\+0f), float yaw=-\/90.\+0f, float pitch=0.\+0f)
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy \doxylink{class_camera}{Camera}. \end{DoxyCompactList}\item 
+glm\+::mat4 \mbox{\hyperlink{class_camera_a5569ca5967e01d3344fbf6aba36d9820}{get\+View\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Funkcja zwracająca macierz widoku kamery. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_camera_a9bccea6a7aff737b3db057cba23892a3}{process\+Keyboard}} (GLFWwindow \texorpdfstring{$\ast$}{*}window, float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Funkcja obsługująca ruch kamery w odpowiedzi na naciśnięcia klawiszy. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_camera_a4f07e3e1263c93781fb17b104d4f4c80}{process\+Mouse\+Movement}} (float x\+Offset, float y\+Offset, bool constrain\+Pitch=true)
+\begin{DoxyCompactList}\small\item\em Funkcja obsługująca ruch myszy do kontrolowania kamery. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_camera_a067090ee525389944ba3bacaa62f7632}{process\+Mouse\+Scroll}} (float y\+Offset)
+\begin{DoxyCompactList}\small\item\em Funkcja obsługująca ruch myszy do kontrolowania zoomu kamery. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa reprezentująca kamerę w przestrzeni trójwymiarowej. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_camera_a78ef93909a0e071abb5d774a5361a97e}\label{class_camera_a78ef93909a0e071abb5d774a5361a97e} 
+\index{Camera@{Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}}
+{\footnotesize\ttfamily Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{position = {\ttfamily glm\+:\+:vec3(0.0f,~0.0f,~3.0f)},  }\item[{glm\+::vec3}]{up = {\ttfamily glm\+:\+:vec3(0.0f,~1.0f,~0.0f)},  }\item[{float}]{yaw = {\ttfamily -\/90.0f},  }\item[{float}]{pitch = {\ttfamily 0.0f} }\end{DoxyParamCaption})}
+
+
+
+Konstruktor klasy \doxylink{class_camera}{Camera}. 
+
+Konstruktor klasy \doxylink{class_camera}{Camera}. Inicjalizuje kamerę ustawiając jej początkową pozycję, kierunek wektorów "{}góra"{}, kąty yaw i pitch oraz parametry ruchu i czułości myszy.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Pozycja kamery w przestrzeni trójwymiarowej. \\
+\hline
+{\em up} & Kierunek wektora "{}góra"{} kamery. \\
+\hline
+{\em yaw} & Kąt odchylenia kamery od kierunku w lewo (w stopniach). \\
+\hline
+{\em pitch} & Kąt nachylenia kamery w górę i w dół (w stopniach). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_camera_a5569ca5967e01d3344fbf6aba36d9820}\label{class_camera_a5569ca5967e01d3344fbf6aba36d9820} 
+\index{Camera@{Camera}!getViewMatrix@{getViewMatrix}}
+\index{getViewMatrix@{getViewMatrix}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getViewMatrix()}{getViewMatrix()}}
+{\footnotesize\ttfamily glm\+::mat4 Camera\+::get\+View\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Funkcja zwracająca macierz widoku kamery. 
+
+\begin{DoxyReturn}{Returns}
+Macierz widoku kamery. 
+\end{DoxyReturn}
+\Hypertarget{class_camera_a9bccea6a7aff737b3db057cba23892a3}\label{class_camera_a9bccea6a7aff737b3db057cba23892a3} 
+\index{Camera@{Camera}!processKeyboard@{processKeyboard}}
+\index{processKeyboard@{processKeyboard}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{processKeyboard()}{processKeyboard()}}
+{\footnotesize\ttfamily void Camera\+::process\+Keyboard (\begin{DoxyParamCaption}\item[{GLFWwindow \texorpdfstring{$\ast$}{*}}]{window,  }\item[{float}]{delta\+Time }\end{DoxyParamCaption})}
+
+
+
+Funkcja obsługująca ruch kamery w odpowiedzi na naciśnięcia klawiszy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & Wskaźnik do obiektu GLFWwindow. \\
+\hline
+{\em delta\+Time} & Czas od ostatniej klatki. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_camera_a4f07e3e1263c93781fb17b104d4f4c80}\label{class_camera_a4f07e3e1263c93781fb17b104d4f4c80} 
+\index{Camera@{Camera}!processMouseMovement@{processMouseMovement}}
+\index{processMouseMovement@{processMouseMovement}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{processMouseMovement()}{processMouseMovement()}}
+{\footnotesize\ttfamily void Camera\+::process\+Mouse\+Movement (\begin{DoxyParamCaption}\item[{float}]{x\+Offset,  }\item[{float}]{y\+Offset,  }\item[{bool}]{constrain\+Pitch = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Funkcja obsługująca ruch myszy do kontrolowania kamery. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Offset} & Przesunięcie myszy w osi X. \\
+\hline
+{\em y\+Offset} & Przesunięcie myszy w osi Y. \\
+\hline
+{\em constrain\+Pitch} & Ogranicza nachylenie kamery w górę i w dół, jeśli ustawione na true. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_camera_a067090ee525389944ba3bacaa62f7632}\label{class_camera_a067090ee525389944ba3bacaa62f7632} 
+\index{Camera@{Camera}!processMouseScroll@{processMouseScroll}}
+\index{processMouseScroll@{processMouseScroll}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{processMouseScroll()}{processMouseScroll()}}
+{\footnotesize\ttfamily void Camera\+::process\+Mouse\+Scroll (\begin{DoxyParamCaption}\item[{float}]{y\+Offset }\end{DoxyParamCaption})}
+
+
+
+Funkcja obsługująca ruch myszy do kontrolowania zoomu kamery. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y\+Offset} & Przesunięcie myszy w osi Y. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Camera.\+h\item 
+Camera.\+cpp\end{DoxyCompactItemize}

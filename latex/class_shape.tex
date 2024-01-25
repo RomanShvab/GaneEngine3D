@@ -1,0 +1,253 @@
+\doxysection{Shape Class Reference}
+\hypertarget{class_shape}{}\label{class_shape}\index{Shape@{Shape}}
+
+
+Klasa reprezentująca abstrakcyjny kształt.  
+
+
+
+
+{\ttfamily \#include $<$Shape.\+h$>$}
+
+Inheritance diagram for Shape\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_shape}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_shape_aaa8d87171e65e0d8ba3c5459978992a7}{Shape}} ()
+\begin{DoxyCompactList}\small\item\em Konstruktor domyślny dla klasy \doxylink{class_shape}{Shape}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_shape_a935afc9e576015f967d90de56977167d}{\texorpdfstring{$\sim$}{\string~}\+Shape}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor dla klasy \doxylink{class_shape}{Shape}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_shape_af0c24d1ca617e85a91054316dc78fa54}{set\+Position}} (float x, float y, float z)
+\begin{DoxyCompactList}\small\item\em Ustawia pozycję kształtu w przestrzeni trójwymiarowej. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_shape_afef6cc2545f1a9143dce92be4ad2699c}{rotate\+At\+Angle}} (float x, float y, float z, float angle)
+\begin{DoxyCompactList}\small\item\em Obraca kształt wokół danej osi o zadany kąt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_shape_aa3d96e7bb08c0980595416a90d401af2}{rotate}} (float x, float y, float z, float speed=1)
+\begin{DoxyCompactList}\small\item\em Obraca kształt wokół danej osi z zadaną prędkością. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_shape_a1733c97b741bc8f97dbfa978a312f1d1}{move}} (float x, float y, float z, float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Przesuwa kształt o zadaną wartość wzdłuż osi X, Y, Z. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_shape_a03ca09e1620b8b449d9ed3309becdf70}{set\+Color}} (float R, float G, float B, float A)
+\begin{DoxyCompactList}\small\item\em Ustawia kolor kształtu. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_shape_a163c84900ca4408060fa8f0757feb2c7}{draw}} (const glm\+::mat4 \&view, const glm\+::mat4 \&projection)=0
+\begin{DoxyCompactList}\small\item\em Czysto wirtualna funkcja rysująca kształt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_shape_a7fed8f3435876c1c847195a807b26d31}{initialize\+Shaders}} ()
+\begin{DoxyCompactList}\small\item\em Inicjalizuje shadery dla kształtu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_shape_a99b78f4f0b0c4bbbbd8aa141526fbc37}{initialize\+VAOVBO}} (float \texorpdfstring{$\ast$}{*}vertices, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Inicjalizuje bufory VAO i VBO dla kształtu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_shape_a98e4008c12e0c6a660afd78136fd69f5}\label{class_shape_a98e4008c12e0c6a660afd78136fd69f5} 
+glm\+::vec3 {\bfseries position}
+\begin{DoxyCompactList}\small\item\em Aktualna pozycja kształtu. \end{DoxyCompactList}\item 
+\Hypertarget{class_shape_af157d64a4d493cc663e3ffb6e3554998}\label{class_shape_af157d64a4d493cc663e3ffb6e3554998} 
+glm\+::vec4 {\bfseries color}
+\begin{DoxyCompactList}\small\item\em Aktualny kolor kształtu (RGBA). \end{DoxyCompactList}\item 
+\Hypertarget{class_shape_acaba8faf22f277db6623d4441211a7ad}\label{class_shape_acaba8faf22f277db6623d4441211a7ad} 
+glm\+::mat4 {\bfseries model}
+\begin{DoxyCompactList}\small\item\em Macierz modelu do transformacji obiektu. \end{DoxyCompactList}\item 
+\Hypertarget{class_shape_af5c585550378522167d7f6c5314c8f78}\label{class_shape_af5c585550378522167d7f6c5314c8f78} 
+double {\bfseries last\+Frame}
+\begin{DoxyCompactList}\small\item\em Czas ostatniej klatki. \end{DoxyCompactList}\item 
+\Hypertarget{class_shape_a8e128b71f4646ab8b39960378410f41f}\label{class_shape_a8e128b71f4646ab8b39960378410f41f} 
+unsigned int {\bfseries VAO}
+\item 
+\Hypertarget{class_shape_a3052ec26aa18a86f5338d3cef919f835}\label{class_shape_a3052ec26aa18a86f5338d3cef919f835} 
+unsigned int {\bfseries VBO}
+\begin{DoxyCompactList}\small\item\em Identyfikatory buforów dla Open\+GL. \end{DoxyCompactList}\item 
+\Hypertarget{class_shape_a3f16df356dc4ea52731f3cab4e1a4dc6}\label{class_shape_a3f16df356dc4ea52731f3cab4e1a4dc6} 
+unsigned int {\bfseries shader\+Program}
+\begin{DoxyCompactList}\small\item\em Identyfikator programu cieniowania. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa reprezentująca abstrakcyjny kształt. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_shape_aaa8d87171e65e0d8ba3c5459978992a7}\label{class_shape_aaa8d87171e65e0d8ba3c5459978992a7} 
+\index{Shape@{Shape}!Shape@{Shape}}
+\index{Shape@{Shape}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{Shape()}{Shape()}}
+{\footnotesize\ttfamily Shape\+::\+Shape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Konstruktor domyślny dla klasy \doxylink{class_shape}{Shape}. 
+
+Konstruktor domyślny dla klasy \doxylink{class_shape}{Shape}. Inicjalizuje domyślne wartości pozycji, koloru i macierzy modelu. Następnie inicjalizuje shadery dla kształtu. \Hypertarget{class_shape_a935afc9e576015f967d90de56977167d}\label{class_shape_a935afc9e576015f967d90de56977167d} 
+\index{Shape@{Shape}!````~Shape@{\texorpdfstring{$\sim$}{\string~}Shape}}
+\index{````~Shape@{\texorpdfstring{$\sim$}{\string~}Shape}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Shape()}{\string~Shape()}}
+{\footnotesize\ttfamily Shape\+::\texorpdfstring{$\sim$}{\string~}\+Shape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destruktor dla klasy \doxylink{class_shape}{Shape}. 
+
+Destruktor dla klasy \doxylink{class_shape}{Shape}. Usuwa bufor VAO, VBO oraz program shaderowy. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_shape_a163c84900ca4408060fa8f0757feb2c7}\label{class_shape_a163c84900ca4408060fa8f0757feb2c7} 
+\index{Shape@{Shape}!draw@{draw}}
+\index{draw@{draw}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily virtual void Shape\+::draw (\begin{DoxyParamCaption}\item[{const glm\+::mat4 \&}]{view,  }\item[{const glm\+::mat4 \&}]{projection }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Czysto wirtualna funkcja rysująca kształt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em view} & Macierz widoku. \\
+\hline
+{\em projection} & Macierz projekcji. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_cube_a86b3cae007469e35cdc6a0ed64cc0e96}{Cube}}, and \mbox{\hyperlink{class_pyramid_a1a1672d7ea108be22490a193d6e115c7}{Pyramid}}.
+
+\Hypertarget{class_shape_a7fed8f3435876c1c847195a807b26d31}\label{class_shape_a7fed8f3435876c1c847195a807b26d31} 
+\index{Shape@{Shape}!initializeShaders@{initializeShaders}}
+\index{initializeShaders@{initializeShaders}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{initializeShaders()}{initializeShaders()}}
+{\footnotesize\ttfamily void Shape\+::initialize\+Shaders (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Inicjalizuje shadery dla kształtu. 
+
+Inicjalizuje shadery dla kształtu. Tworzy, kompiluje i linkuje vertex i fragment shader. Shader program jest przechowywany w polu shader\+Program. \Hypertarget{class_shape_a99b78f4f0b0c4bbbbd8aa141526fbc37}\label{class_shape_a99b78f4f0b0c4bbbbd8aa141526fbc37} 
+\index{Shape@{Shape}!initializeVAOVBO@{initializeVAOVBO}}
+\index{initializeVAOVBO@{initializeVAOVBO}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{initializeVAOVBO()}{initializeVAOVBO()}}
+{\footnotesize\ttfamily void Shape\+::initialize\+VAOVBO (\begin{DoxyParamCaption}\item[{float \texorpdfstring{$\ast$}{*}}]{vertices,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Inicjalizuje bufory VAO i VBO dla kształtu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertices} & Wskaźnik do tablicy zawierającej wierzchołki kształtu. \\
+\hline
+{\em size} & Rozmiar tablicy wierzchołków. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_shape_a1733c97b741bc8f97dbfa978a312f1d1}\label{class_shape_a1733c97b741bc8f97dbfa978a312f1d1} 
+\index{Shape@{Shape}!move@{move}}
+\index{move@{move}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Shape\+::move (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z,  }\item[{float}]{delta\+Time }\end{DoxyParamCaption})}
+
+
+
+Przesuwa kształt o zadaną wartość wzdłuż osi X, Y, Z. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Wartość przesunięcia wzdłuż osi X. \\
+\hline
+{\em y} & Wartość przesunięcia wzdłuż osi Y. \\
+\hline
+{\em z} & Wartość przesunięcia wzdłuż osi Z. \\
+\hline
+{\em delta\+Time} & Czas od ostatniej klatki. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_shape_aa3d96e7bb08c0980595416a90d401af2}\label{class_shape_aa3d96e7bb08c0980595416a90d401af2} 
+\index{Shape@{Shape}!rotate@{rotate}}
+\index{rotate@{rotate}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily void Shape\+::rotate (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z,  }\item[{float}]{speed = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+Obraca kształt wokół danej osi z zadaną prędkością. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Składowa X wektora obrotu. \\
+\hline
+{\em y} & Składowa Y wektora obrotu. \\
+\hline
+{\em z} & Składowa Z wektora obrotu. \\
+\hline
+{\em speed} & Prędkość obrotu (domyślnie 1). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_shape_afef6cc2545f1a9143dce92be4ad2699c}\label{class_shape_afef6cc2545f1a9143dce92be4ad2699c} 
+\index{Shape@{Shape}!rotateAtAngle@{rotateAtAngle}}
+\index{rotateAtAngle@{rotateAtAngle}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{rotateAtAngle()}{rotateAtAngle()}}
+{\footnotesize\ttfamily void Shape\+::rotate\+At\+Angle (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z,  }\item[{float}]{angle }\end{DoxyParamCaption})}
+
+
+
+Obraca kształt wokół danej osi o zadany kąt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Składowa X wektora obrotu. \\
+\hline
+{\em y} & Składowa Y wektora obrotu. \\
+\hline
+{\em z} & Składowa Z wektora obrotu. \\
+\hline
+{\em angle} & Kąt obrotu w stopniach. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_shape_a03ca09e1620b8b449d9ed3309becdf70}\label{class_shape_a03ca09e1620b8b449d9ed3309becdf70} 
+\index{Shape@{Shape}!setColor@{setColor}}
+\index{setColor@{setColor}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{setColor()}{setColor()}}
+{\footnotesize\ttfamily void Shape\+::set\+Color (\begin{DoxyParamCaption}\item[{float}]{R,  }\item[{float}]{G,  }\item[{float}]{B,  }\item[{float}]{A }\end{DoxyParamCaption})}
+
+
+
+Ustawia kolor kształtu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em R} & Składowa czerwona (0.\+0 -\/ 1.\+0). \\
+\hline
+{\em G} & Składowa zielona (0.\+0 -\/ 1.\+0). \\
+\hline
+{\em B} & Składowa niebieska (0.\+0 -\/ 1.\+0). \\
+\hline
+{\em A} & Składowa alpha (przezroczystość, 0.\+0 -\/ 1.\+0). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_shape_af0c24d1ca617e85a91054316dc78fa54}\label{class_shape_af0c24d1ca617e85a91054316dc78fa54} 
+\index{Shape@{Shape}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void Shape\+::set\+Position (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})}
+
+
+
+Ustawia pozycję kształtu w przestrzeni trójwymiarowej. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Współrzędna X. \\
+\hline
+{\em y} & Współrzędna Y. \\
+\hline
+{\em z} & Współrzędna Z. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Shape.\+h\item 
+Shape.\+cpp\end{DoxyCompactItemize}

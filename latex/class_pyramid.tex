@@ -1,0 +1,114 @@
+\doxysection{Pyramid Class Reference}
+\hypertarget{class_pyramid}{}\label{class_pyramid}\index{Pyramid@{Pyramid}}
+
+
+Klasa reprezentująca piramidę dziedzicząca po klasie \doxylink{class_shape}{Shape}.  
+
+
+
+
+{\ttfamily \#include $<$Pyramid.\+h$>$}
+
+Inheritance diagram for Pyramid\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_pyramid}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_pyramid_aa78baa6faa1c3fbcca510e8ddf37de49}{Pyramid}} ()
+\begin{DoxyCompactList}\small\item\em Konstruktor domyślny dla klasy \doxylink{class_pyramid}{Pyramid}. Inicjalizuje piramidę, dziedzicząc konstruktor z klasy \doxylink{class_shape}{Shape}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_pyramid_a1a1672d7ea108be22490a193d6e115c7}{draw}} (const glm\+::mat4 \&view, const glm\+::mat4 \&projection) override
+\begin{DoxyCompactList}\small\item\em Czysto wirtualna funkcja rysująca piramidę. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_shape}{Shape}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_shape_aaa8d87171e65e0d8ba3c5459978992a7}{Shape}} ()
+\begin{DoxyCompactList}\small\item\em Konstruktor domyślny dla klasy \doxylink{class_shape}{Shape}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_shape_a935afc9e576015f967d90de56977167d}{\texorpdfstring{$\sim$}{\string~}\+Shape}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor dla klasy \doxylink{class_shape}{Shape}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_shape_af0c24d1ca617e85a91054316dc78fa54}{set\+Position}} (float x, float y, float z)
+\begin{DoxyCompactList}\small\item\em Ustawia pozycję kształtu w przestrzeni trójwymiarowej. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_shape_afef6cc2545f1a9143dce92be4ad2699c}{rotate\+At\+Angle}} (float x, float y, float z, float angle)
+\begin{DoxyCompactList}\small\item\em Obraca kształt wokół danej osi o zadany kąt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_shape_aa3d96e7bb08c0980595416a90d401af2}{rotate}} (float x, float y, float z, float speed=1)
+\begin{DoxyCompactList}\small\item\em Obraca kształt wokół danej osi z zadaną prędkością. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_shape_a1733c97b741bc8f97dbfa978a312f1d1}{move}} (float x, float y, float z, float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Przesuwa kształt o zadaną wartość wzdłuż osi X, Y, Z. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_shape_a03ca09e1620b8b449d9ed3309becdf70}{set\+Color}} (float R, float G, float B, float A)
+\begin{DoxyCompactList}\small\item\em Ustawia kolor kształtu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_shape}{Shape}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_shape_a7fed8f3435876c1c847195a807b26d31}{initialize\+Shaders}} ()
+\begin{DoxyCompactList}\small\item\em Inicjalizuje shadery dla kształtu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_shape_a99b78f4f0b0c4bbbbd8aa141526fbc37}{initialize\+VAOVBO}} (float \texorpdfstring{$\ast$}{*}vertices, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Inicjalizuje bufory VAO i VBO dla kształtu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_shape}{Shape}}}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec3 {\bfseries position}
+\begin{DoxyCompactList}\small\item\em Aktualna pozycja kształtu. \end{DoxyCompactList}\item 
+glm\+::vec4 {\bfseries color}
+\begin{DoxyCompactList}\small\item\em Aktualny kolor kształtu (RGBA). \end{DoxyCompactList}\item 
+glm\+::mat4 {\bfseries model}
+\begin{DoxyCompactList}\small\item\em Macierz modelu do transformacji obiektu. \end{DoxyCompactList}\item 
+double {\bfseries last\+Frame}
+\begin{DoxyCompactList}\small\item\em Czas ostatniej klatki. \end{DoxyCompactList}\item 
+unsigned int {\bfseries VAO}
+\item 
+unsigned int {\bfseries VBO}
+\begin{DoxyCompactList}\small\item\em Identyfikatory buforów dla Open\+GL. \end{DoxyCompactList}\item 
+unsigned int {\bfseries shader\+Program}
+\begin{DoxyCompactList}\small\item\em Identyfikator programu cieniowania. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa reprezentująca piramidę dziedzicząca po klasie \doxylink{class_shape}{Shape}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_pyramid_aa78baa6faa1c3fbcca510e8ddf37de49}\label{class_pyramid_aa78baa6faa1c3fbcca510e8ddf37de49} 
+\index{Pyramid@{Pyramid}!Pyramid@{Pyramid}}
+\index{Pyramid@{Pyramid}!Pyramid@{Pyramid}}
+\doxysubsubsection{\texorpdfstring{Pyramid()}{Pyramid()}}
+{\footnotesize\ttfamily Pyramid\+::\+Pyramid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Konstruktor domyślny dla klasy \doxylink{class_pyramid}{Pyramid}. Inicjalizuje piramidę, dziedzicząc konstruktor z klasy \doxylink{class_shape}{Shape}. 
+
+Konstruktor dla klasy \doxylink{class_pyramid}{Pyramid}. Inicjalizuje piramidę poprzez przekazanie odpowiednich wierzchołków do funkcji initialize\+VAOVBO. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_pyramid_a1a1672d7ea108be22490a193d6e115c7}\label{class_pyramid_a1a1672d7ea108be22490a193d6e115c7} 
+\index{Pyramid@{Pyramid}!draw@{draw}}
+\index{draw@{draw}!Pyramid@{Pyramid}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Pyramid\+::draw (\begin{DoxyParamCaption}\item[{const glm\+::mat4 \&}]{view,  }\item[{const glm\+::mat4 \&}]{projection }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Czysto wirtualna funkcja rysująca piramidę. 
+
+Funkcja rysująca piramidę. Ustawia parametry shaderów i macierzy, a następnie rysuje piramidę.
+
+
+\begin{DoxyParams}{Parameters}
+{\em view} & Macierz widoku. \\
+\hline
+{\em projection} & Macierz projekcji. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_shape_a163c84900ca4408060fa8f0757feb2c7}{Shape}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Pyramid.\+h\item 
+Pyramid.\+cpp\end{DoxyCompactItemize}

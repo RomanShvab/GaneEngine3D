@@ -1,3 +1,2 @@
 ﻿  Main.cpp
-C:\Users\shvab\Desktop\GameEngine3D\Main.cpp(77,20): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
   OpenGl.vcxproj -> C:\Users\shvab\Desktop\GameEngine3D\x64\Debug\OpenGl.exe
